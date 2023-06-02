@@ -1,0 +1,27 @@
+.footer {
+    background: url(../../../public/imagens/fundoRodape2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFF;
+    padding: 25px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
+}
+
+.textoRodape{
+    background-color: #6278F7;
+    border-radius: 10px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 18px;
+}
