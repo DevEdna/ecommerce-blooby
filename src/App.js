@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './reset.css';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
-import Time from './componentes/Time';
+import Categoria from './componentes/Categoria';
 import Rodape from './componentes/Rodape';
 
 
 function App() {
 
-  const times = [
+  const categorias = [
     {
       nome: 'Alimentos e bebidas',
       corPrimaria: '#57C278',
@@ -46,24 +46,24 @@ function App() {
     }
   ]
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [produtos, setProdutos] = useState([])
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
+  const aoNovoProdutoAdicionado = (produto) => {
     // debugger
-    setColaboradores([...colaboradores, colaborador])
+    setProdutos([...produtos, produto])
   }
 
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      <Formulario categorias={categorias.map(categoria => categoria.nome)} aoProdutoCadastrado={produto => aoNovoProdutoAdicionado(produto)}/>
 
-      {times.map(time => <Time 
-        key={time.nome} 
-        nome={time.nome} 
-        corPrimaria={time.corPrimaria} 
-        corSecundaria={time.corSecundaria} 
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      {categorias.map(categoria => <Categoria 
+        key={categoria.nome} 
+        nome={categoria.nome} 
+        corPrimaria={categoria.corPrimaria} 
+        corSecundaria={categoria.corSecundaria} 
+        produtos={produtos.filter(produto => produto.categoria === categoria.nome)}
       />)}   
 
       <Rodape/>

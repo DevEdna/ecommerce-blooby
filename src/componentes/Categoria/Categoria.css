@@ -1,16 +1,16 @@
-.time {
+.categoria {
     text-align: center;
     padding: 20px 30px 57px;
 }
 
-.time h3 {
+.categoria h3 {
     font-size: 32px;
     border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
 }
 
-.time .colaboradores {
+.categoria .produtos {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;

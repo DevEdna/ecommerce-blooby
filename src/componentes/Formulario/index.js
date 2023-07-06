@@ -7,22 +7,22 @@ import './Formulario.css'
 const Formulario = (props) => {
 
   const [nome, setNome] = useState('')
-  const [cargo, setCargo] = useState('')
+  const [valor, setValor] = useState('')
   const [imagem, setImagem] = useState('')
-  const [time, setTime] = useState('')
+  const [categoria, setCategoria] = useState('')
 
   const aoSalvar = (evento) => {
     evento.preventDefault()
-    props.aoColaboradorCadastrado({
+    props.aoProdutoCadastrado({
       nome,
-      cargo,
+      valor,
       imagem,
-      time
+      categoria
     })
     setNome('')
-    setCargo('')
+    setValor('')
     setImagem('')
-    setTime('')
+    setCategoria('')
   }
 
   return (
@@ -41,8 +41,8 @@ const Formulario = (props) => {
             obrigatorio={true}
             label="Valor"
             placeholder="Digite o valor"
-            valor={cargo}
-            aoAlterado={valor => setCargo(valor)}
+            valor={valor}
+            aoAlterado={valor => setValor(valor)}
           />
           <CampoTexto
             obrigatorio={true}
@@ -54,9 +54,9 @@ const Formulario = (props) => {
           <ListaSuspensa
             obrigatorio={true}
             label="Categoria"
-            itens={props.times}
-            valor={time}
-            aoAlterado={valor => setTime(valor)}
+            itens={props.categorias}
+            valor={categoria}
+            aoAlterado={valor => setCategoria(valor)}
           />
 
           <div className='divExternaBtn'>
